@@ -2,7 +2,7 @@
 
 Meet SIRI's distant cousin, LIRI! LIRI (Language Interpretation and Recognition Interface) is a command line node app. 
 
-![Gif](https://drive.google.com/file/d/15a77cZlftofvpnJwRH4U0CeWZmODynfY/view)
+![Say Hi Demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/1-say-hi.gif)
 
 ## How It Works
 
