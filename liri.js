@@ -141,10 +141,18 @@ function doThis() {
         search = commandSearch[1];
 
         console.log(command);
-        console.log(search)
+        console.log(search);
+    });
 
-}
+};
 
+function sayHi() {
+    console.log(`
+                        ___             ___  _  ___   
+    |_|  _  | |  _  |    | / ._ _    |   |  |_)  |  | 
+    | | (/_ | | (_) o   _|_  | | |   |_ _|_ | | _|_ o                                                
+    `);                                                                            
+};
 
 // =================================================================================================================================
 // MAIN PROCESS
@@ -158,9 +166,13 @@ if (command == "concert-this") {
     movieThis();
 } else if (command == "do-what-it-says") {
     doThis();
+} else if (command == "say-hi") {
+    sayHi();
 } else {
     console.log(`\n******************************************************`)
     console.log(`\nLIRI does not understand. \n\nLIRI can understand the following commands only: `)
-    console.log(`\nconcert-this \nspotify-this-song \nmovie-this \ndo-what-it-says`)
+    console.log(`\nconcert-this \nspotify-this-song \nmovie-this \ndo-what-it-says \nsay-hi`)
     console.log(`\n******************************************************`)
 }    
+
+    
