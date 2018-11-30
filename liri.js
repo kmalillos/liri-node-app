@@ -26,39 +26,34 @@ var search = process.argv.slice(3).join("+");
 // FUNCTIONS
 // =================================================================================================================================
 
-// concert-this command
 function concertThis() {
     var queryUrl = "https://rest.bandsintown.com/artists/" + search + "/events?app_id=codingbootcamp";
-    //console.log(queryUrl);
+    // console.log(queryUrl);
 
     axios.get(queryUrl).then(
         function (response) {
-
             //console.log(typeof response)
             //console.log(response.data)
-            var artist = process.argv.slice(3).join(" ");
             var concert = response.data;
 
             //console.log(concert.length)
 
+            // displays up to 5 songs
             if (concert.length > 5) {
                 for (var i = 0; i < 5; i++) {
-                    console.log(`\n******************************************************`)
-                    console.log(`\nArtist/Band: ${artist} 
-                        \nVenue: ${concert[i].venue.name} 
-                        \nLocation: ${concert[i].venue.city}, ${concert[i].venue.region}
-                        \nDate: ${moment(concert[i].datetime).format("MM/DD/YYYY")}`)
-                    // Date of the Event (use moment to format this as "MM/DD/YYYY")
+                    console.log(`\n******************************************************\n`)
+                    console.log(`   Artist/Band: ${concert[i].lineup[0]}`) 
+                    console.log(`   Venue: ${concert[i].venue.name}`) 
+                    console.log(`   Location: ${concert[i].venue.city}, ${concert[i].venue.region}`)
+                    console.log(`   Date: ${moment(concert[i].datetime).format("MM/DD/YYYY")}`)
                 };
                 console.log(`\n******************************************************`)
             } else {
                 for (var i = 0; i < concert.length; i++) {
-                    console.log(`\n******************************************************`)
-                    console.log(`\nArtist/Band: ${artist} 
-                        \nVenue: ${concert[i].venue.name} 
-                        \nLocation: ${concert[i].venue.city}, ${concert[i].venue.region}
-                        \nDate: ${moment(concert[i].datetime).format("MM/DD/YYYY")}`)
-                    // Date of the Event (use moment to format this as "MM/DD/YYYY")
+                    console.log(`   Artist/Band: ${concert[i].lineup[0]}`) 
+                    console.log(`   Venue: ${concert[i].venue.name}`) 
+                    console.log(`   Location: ${concert[i].venue.city}, ${concert[i].venue.region}`)
+                    console.log(`   Date: ${moment(concert[i].datetime).format("MM/DD/YYYY")}`)
                 };
                 console.log(`\n******************************************************`)
             }
@@ -66,30 +61,31 @@ function concertThis() {
     );
 };
 
-// spotify-this-song command
 // ***TO ADD "THE SIGN" DEFAULT***
 function spotifyThis() {
 
-    spotify.search({ type: 'track', query: search }, function (err, response) {
-        if (err) {
-            return console.log('Error occurred: ' + err);
-        }
+        spotify.search({ type: 'track', query: search }, function (err, response) {
+            // console.log(response.tracks.items[0]);
 
-        // console.log(response.tracks.items[0]); 
-        var track = response.tracks.items[0];
-        var song = process.argv.slice(3).join(" ");
+            if (err) {
+                return console.log('Error occurred: ' + err);
+            }
+            
+            // displays 5 songs
+            for (var i=0; i<5; i++) {
+                var track = response.tracks.items[i];
+    
+                console.log(`\n******************************************************\n`)
+                console.log(`   Artist/Band: ${track.artists[0].name}`) 
+                console.log(`   Song: ${track.name}`) 
+                console.log(`   Preview Song: ${track.external_urls.spotify}`)
+                console.log(`   Album: ${track.album.name}`)
+            };
+            console.log(`\n******************************************************`)
 
-        console.log(`\n******************************************************`)
-        console.log(`\nArtist/Band: ${track.artists[0].name} 
-            \nSong: ${song}
-            \nSong Preview: ${track.external_urls.spotify}
-            \nAlbum: ${track.album.name}`)
-        console.log(`\n******************************************************`)
-
-    });
+        });
 };
 
-// movie-this command
 // ***TO ADD "MR. NOBODY" DEFAULT***
 function movieThis() {
     var queryUrl = "http://www.omdbapi.com/?t=" + search + "&y=&plot=short&apikey=trilogy";
@@ -100,15 +96,15 @@ function movieThis() {
             // console.log(response.data);
             var movie = response.data;
 
-            console.log(`\n******************************************************`)
-            console.log(`\nTitle: ${movie.Title} 
-                \nYear: ${movie.Year} 
-                \nIMBD Rating: ${movie.Ratings[0].Value} 
-                \nRotten Tomatoes Rating: ${movie.Ratings[1].Value} 
-                \nCountry: ${movie.Country} 
-                \nLanguage: ${movie.Language} 
-                \nPlot: ${movie.Plot} 
-                \nActors: ${movie.Actors}`);
+            console.log(`\n******************************************************\n`)
+            console.log(`   Title: ${movie.Title} `) 
+            console.log(`   Year: ${movie.Year} `) 
+            console.log(`   IMBD Rating: ${movie.Ratings[0].Value}`)
+            console.log(`   Rotten Tomatoes Rating: ${movie.Ratings[1].Value}`)
+            console.log(`   Country: ${movie.Country}`)
+            console.log(`   Language: ${movie.Language}`)
+            console.log(`   Plot: ${movie.Plot}`)
+            console.log(`   Actors: ${movie.Actors}`)
             console.log(`\n******************************************************`)
         })
         .catch(function (error) {
@@ -125,32 +121,51 @@ function doThis() {
             return console.log(error);
         }
 
-        // We will then print the contents of data
         //console.log(response);
 
         // Then split it by commas (to make it more readable)
         //.split breaks it into an array; splits at ", " (characters you want to split)
-        var commandSearch = response.split(",");
-
+        var textArray = response.split(",");
+        
         // We will then re-display the content as an array for later use.
-        // console.log(commandSearch);
-        // console.log(commandSearch[0]);
-        // console.log(commandSearch[1]);
+        // console.log(textArray);
 
-        command = commandSearch[0];
-        search = commandSearch[1];
+        for (var i=0; i<textArray.length; i++) {
+            // console.log(textArray[i])
 
-        console.log(command);
-        console.log(search);
-    });
+            if (i % 2 === 0) {
+                command = textArray[i];
+            } else {
+                search = textArray[i]
+            }
 
+        };
+        
+        console.log(command, search);
+        
+        if (command == "concert-this") {
+            concertThis();
+        } else if (command == "spotify-this-song") {
+            spotifyThis();
+        } else if (command == "movie-this") {
+            movieThis();
+        } else {
+            console.log(`\n******************************************************\n`)
+            console.log(`   LIRI does not understand.`)
+            console.log(`\n   Try these commands: `)
+            console.log(`\n   concert-this\n   spotify-this-song\n   movie-this\n   do-what-it-says\n   say-hi`)
+            console.log(`\n******************************************************`)
+        }    
+
+    })
 };
 
 function sayHi() {
     console.log(`
                         ___             ___  _  ___   
     |_|  _  | |  _  |    | / ._ _    |   |  |_)  |  | 
-    | | (/_ | | (_) o   _|_  | | |   |_ _|_ | | _|_ o                                                
+    | | (/_ | | (_) o   _|_  | | |   |_ _|_ | | _|_ o
+    
     `);                                                                            
 };
 
@@ -169,9 +184,10 @@ if (command == "concert-this") {
 } else if (command == "say-hi") {
     sayHi();
 } else {
-    console.log(`\n******************************************************`)
-    console.log(`\nLIRI does not understand. \n\nLIRI can understand the following commands only: `)
-    console.log(`\nconcert-this \nspotify-this-song \nmovie-this \ndo-what-it-says \nsay-hi`)
+    console.log(`\n******************************************************\n`)
+    console.log(`   LIRI does not understand.`)
+    console.log(`\n   Try these commands: `)
+    console.log(`\n   concert-this\n   spotify-this-song\n   movie-this\n   do-what-it-says\n   say-hi`)
     console.log(`\n******************************************************`)
 }    
 
