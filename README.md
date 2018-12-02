@@ -67,23 +67,23 @@ LIRI is a command line node app that takes in User inputted parameters and displ
 
 * **process.argv[]** is used to access and capture the command line user inputs. The command line user inputs are stored in variables 'command' and 'search' to be later used in the functions and the main process.
 
-![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-1.JPG)
+    ![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-1.JPG)
 
-The 'command' variable is used in the main process to call a particular function using 'If-Else Statements.'
+    - The 'command' variable is used in the main process to call a particular function using 'If-Else Statements.'
 
-![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-2.JPG)
+    ![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-2.JPG)
 
-![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-3.JPG)
+    ![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-3.JPG)
 
-The 'search' variable is used in the API request.
+    - The 'search' variable is used in the API request.
 
-![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-4.JPG)
+    ![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-4.JPG)
 
 * **File System(fs)** ([Link](https://nodejs.org/api/fs.html)) is built into Node.js and is used to read the file of 'random.txt' in the 'doThis()' function that is triggered by the 'do-what-it-says' command.
 
-![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/fs-code-1.JPG)
+    ![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/fs-code-1.JPG)
 
-![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/fs-code-2.JPG)
+    ![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/fs-code-2.JPG)
 
 ### NPM's:
 
