@@ -2,58 +2,58 @@
 
 Meet SIRI's distant cousin, LIRI! LIRI is a Language Interpretation and Recognition Interface that can give you details and information for concerts, songs, and movies.
 
-**Full Demo:** [Link](https://drive.google.com/drive/u/0/folders/1pVhkWgTAFBpQCh2Ifrj805jvokfKRffW)
-
+### **Full Demo:** [Link](https://youtu.be/E15qU5ZDIUk)
 
 ## How It Works
 
 LIRI is a command line node app that takes in User inputted parameters and displays data from APIs. LIRI can "understand" the following commands:
-    * **concert-this** *artist/band name* --> displays upcoming concert of artist/band
-    * **spotify-this-song** *song title* --> displays song information
-    * **movie-this** *movie title* --> displays movie details
-    * **do-what-it-says** --> reads from a text file and runs respective function
+* **concert-this** *artist/band name* --> displays upcoming concert of artist/band
+* **spotify-this-song** *song title* --> displays song information
+* **movie-this** *movie title* --> displays movie details
+* **do-what-it-says** --> reads from a text file and runs respective function
 
-Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/1-else-statement.gif)
+**Full Demo:** [Link](https://youtu.be/E15qU5ZDIUk)
 
-**Demo:** 'concert-this' command line input:
+![image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images/1-else-statement.JPG)
 
-Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/2-concert-this.gif)
+**'concert-this' command line input:** [demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/2-concert-this.gif)
 
-**Demo:** 'concert-this' default:
+![image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images/2-concert-this.JPG)
 
-Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/4-spotify-this-song.gif)
+**'concert-this' default:** [demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/3-concert-this-default.gif)
 
-**Demo:** 'spotify-this-song' command line input:
+![image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images/3-concert-this-default.JPG)
 
-Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/4-spotify-this-song.gif)
+**'spotify-this-song' command line input:** [demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/4-spotify-this-song.gif)
 
-**Demo:** 'spotify-this-song' default:
+![image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images/4-spotify-this-song.JPG)
 
-Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/5-spotify-this-song-default.gif)
+**'spotify-this-song' default:** [demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/5-spotify-this-song-default.gif)
 
-**Demo:** 'movie-this' command line input:
+![image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images/5-spotify-this-song-default.JPG)
 
-Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/6-movie-this.gif)
+**'movie-this' command line input:** [demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/6-movie-this.gif)
 
-**Demo:** 'movie-this' default:
+![image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images/6-movie-this.JPG)
 
-Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/7-movie-this-default.gif)
+**'movie-this' default:** [demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/7-movie-this-default.gif)
 
-**Demo:** 'do-what-it-says' command line input:
+![image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images/7-movie-this-default.JPG)
 
-Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/8-do-what-it-says.gif)
+**'do-what-it-says' command line input:** [demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/8-do-what-it-says.gif)
 
-**Demo:** Easter Egg: 'say-hi' command line input:
+![image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images/8-do-what-it-says.JPG)
 
-Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/9-say-hi.gif)
+**Easter Egg: 'say-hi' command line input:** [demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/9-say-hi.gif)
 
+![image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images/9-say-hi.JPG)
 
 ## Developer Notes
 
 ### Tools Used:
 * Node.js
     - File System (fs)
-* NPMs
+* NPMs - *all NPMs*
     - Axios
     - Moment
     - Node Spotify API
@@ -63,9 +63,59 @@ Demo: ![demo](https://github.com/kmalillos/liri-node-app/blob/master/assets/gif/
     - Spotify API
     - OMBD API
 
+### Node.js
+
+* **process.argv[]** is used to access and capture the command line user inputs. The command line user inputs are stored in variables 'command' and 'search' to be later used in the functions and the main process.
+
+![Image]()
+
+The 'command' variable calls a particular function using 'If-Else Statements.'
+
+![Image]()
+
+![Image]()
+
+The 'search' variable is used in the API request.
+
+![Image]()
+
+* **File System(fs)** ([Link](https://nodejs.org/api/fs.html)) is built into Node.js and is used to read the file of 'random.txt' in the 'doThis()' function that is triggered by the 'do-what-it-says' command.
+
+![Image]()
+
+![Image]()
+
+* **NPMs**:
+- 'package.json' was created using command 'npm init' to save all NPMs and dependencies.
+- Then, all NPMs were installed using command 'npm install <npm package here>'.
+- NPMs were accessed in JavaScript file with a "require" function.
+
+* **Axios NPM**  ([Link](https://www.npmjs.com/package/axios)) is used to make a .get and .then request from an external API. 
+
+It is used here to access: Bands in Town API for the 'concertThis()' function that is triggered by the 'concert-this' command,
+
+![Image]()
+
+and OMBD API for the 'movieThis()' function that is triggered by the 'move-this' command.
+
+![Image]()
+
+* **Moment NPM**  ([Link](https://www.npmjs.com/package/moment)) is used to reformat dates. It is used here 'concertThis()' function to reformat the dates in the Bands In Town API to: MM/DD/YYYY.
+
+![Image]()
+
+* **Node Spotify NPM**  ([Link](https://www.npmjs.com/package/node-spotify-api)) enables the use of the API library for the Spotify REST API.
+
+![Image]()
+
+* **DotEnv NPM**  ([Link](https://www.npmjs.com/package/dotenv)) loads environment variables from a .env file into process.env, storing configuration in the environment separate from code.
+
+![Image]()
+
 ## Contributor
 
 ### Kaylah Malillos
 
 **About the Developer:** [Link](https://kmalillos.github.io/)
+
 
