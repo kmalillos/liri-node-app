@@ -159,7 +159,7 @@ function doThis() {
 
         };
 
-        console.log(command, search);
+        console.log(`\n\n` + command, search);
 
         if (command == "concert-this") {
             concertThis();
