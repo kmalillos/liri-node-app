@@ -67,23 +67,23 @@ LIRI is a command line node app that takes in User inputted parameters and displ
 
 * **process.argv[]** is used to access and capture the command line user inputs. The command line user inputs are stored in variables 'command' and 'search' to be later used in the functions and the main process.
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-1.JPG)
 
-The 'command' variable calls a particular function using 'If-Else Statements.'
+The 'command' variable is used in the main process to call a particular function using 'If-Else Statements.'
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-2.JPG)
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-3.JPG)
 
 The 'search' variable is used in the API request.
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/node-code-4.JPG)
 
 * **File System(fs)** ([Link](https://nodejs.org/api/fs.html)) is built into Node.js and is used to read the file of 'random.txt' in the 'doThis()' function that is triggered by the 'do-what-it-says' command.
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/fs-code-1.JPG)
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/fs-code-2.JPG)
 
 * **NPMs**:
 - 'package.json' was created using command 'npm init' to save all NPMs and dependencies.
@@ -92,25 +92,33 @@ The 'search' variable is used in the API request.
 
 * **Axios NPM**  ([Link](https://www.npmjs.com/package/axios)) is used to make a .get and .then request from an external API. 
 
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/axios-code-1.JPG)
+
 It is used here to access: Bands in Town API for the 'concertThis()' function that is triggered by the 'concert-this' command,
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/axios-code-2.JPG)
 
 and OMBD API for the 'movieThis()' function that is triggered by the 'move-this' command.
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/axios-code-3.JPG)
 
 * **Moment NPM**  ([Link](https://www.npmjs.com/package/moment)) is used to reformat dates. It is used here 'concertThis()' function to reformat the dates in the Bands In Town API to: MM/DD/YYYY.
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/moment-code-1.JPG)
+
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/moment-code-2.JPG)
 
 * **Node Spotify NPM**  ([Link](https://www.npmjs.com/package/node-spotify-api)) enables the use of the API library for the Spotify REST API.
 
-![Image]()
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/spotify-code-1.JPG)
 
-* **DotEnv NPM**  ([Link](https://www.npmjs.com/package/dotenv)) loads environment variables from a .env file into process.env, storing configuration in the environment separate from code.
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/spotify-code-2.JPG)
 
-![Image]()
+* **DotEnv NPM**  ([Link](https://www.npmjs.com/package/dotenv)) loads environment variables from a .env file into process.env, storing configuration in the environment separate from code. This is used to access hidden Spotify API keys.
+
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/dotenv-code-1.JPG)
+
+![Image](https://github.com/kmalillos/liri-node-app/blob/master/assets/images_2/dotenv-code-2.JPG)
 
 ## Contributor
 
